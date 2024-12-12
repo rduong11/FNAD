@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import './index.css';
-import { Container, createTheme, Typography, Button, Box, ThemeProvider, Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
+import { Container, createTheme, Typography, Button, Box, ThemeProvider, Dialog, DialogActions, DialogContent, DialogTitle, Card, CardContent} from "@mui/material";
+import { red } from '@mui/material/colors';
+import { shadows } from '@mui/system';
 
 function App()
 {
   const [openDialog, setOpenDialog] = useState(null);
+  const [gold, setGold] = useState(100);
 
   const handleOpenDialog = (dialogName) => {
     setOpenDialog(dialogName);
@@ -80,8 +83,13 @@ function App()
                 Baby Oil can be spread on the floor to slip Diddy, making him take 10 damage.
               </Typography>
             </DialogContent>
+            <Typography gutterBottom variant="body1" sx={{ mx:3, my: 1}}>
+                Price: 25 gold
+              </Typography>
             <DialogActions>
               <Button onClick={handleCloseDialog}>Close</Button>
+              <Button variant="contained" 
+                      sx={{backgroundColor: "secondary.main", color: "white"}}>Purchase</Button>
             </DialogActions>
           </Dialog>
 
@@ -106,8 +114,13 @@ function App()
               This body camera sends live footage to the FBI. If you survive long enough, they will gather enough information to know where you are!
               </Typography>
             </DialogContent>
+            <Typography gutterBottom variant="body1" sx={{ mx:3, my: 1}}>
+                Price: 75 gold
+              </Typography>
             <DialogActions>
               <Button onClick={handleCloseDialog}>Close</Button>
+              <Button variant="contained" 
+                      sx={{backgroundColor: "secondary.main", color: "white"}}>Purchase</Button>
             </DialogActions>
           </Dialog>
 
@@ -132,8 +145,13 @@ function App()
                 Pepper spray is sprayed directly into Diddy's eyes, blinding him for 8 seconds.
               </Typography>
             </DialogContent>
+            <Typography gutterBottom variant="body1" sx={{ mx:3, my: 1}}>
+                Price: 15 gold
+              </Typography>
             <DialogActions>
               <Button onClick={handleCloseDialog}>Close</Button>
+              <Button variant="contained" 
+                      sx={{backgroundColor: "secondary.main", color: "white"}}>Purchase</Button>
             </DialogActions>
           </Dialog>
 
@@ -158,11 +176,55 @@ function App()
                 This 18+ ID will be presented to Diddy, rendering him stunned for 5 seconds. Beware, after being stunned he will come back angrier!
               </Typography>
             </DialogContent>
+            <Typography gutterBottom variant="body1" sx={{ mx:3, my: 1}}>
+                Price: FREE (one time usage)
+              </Typography>
             <DialogActions>
               <Button onClick={handleCloseDialog}>Close</Button>
+              <Button variant="contained" 
+                      sx={{backgroundColor: "secondary.main", color: "white"}}>Purchase</Button>
             </DialogActions>
           </Dialog>
         </Box>
+      
+        <Box sx={{ my: 3, p: 2, border: 2, borderRadius: 3 }}>
+          <Typography 
+            variant="h2"
+            sx={{ textAlign: "left", color: "primary.main" }}
+          > Inventory
+          </Typography>
+          <Card sx={{ p: 1, my: 2, boxShadow: 5, display: "inline-flex" }}>
+            <CardContent>
+              <Typography 
+                gutterBottom 
+                variant="h5" 
+                component="div"
+              >
+                Test
+              </Typography>
+              <Typography 
+                variant="body2" 
+                color="text.secondary"
+              >
+                Test Item Description
+              </Typography>
+              <Button
+                variant="contained"
+                sx={{backgroundColor: "#b81004", color: "white"}}
+                >
+                  Sell
+              </Button>
+            </CardContent>
+          </Card>
+        </Box>
+
+        <Typography 
+          variant="overline" 
+          gutterBottom 
+          sx={{fontSize: "1.5em", display: 'block' }}
+        >
+          Gold: {gold}
+        </Typography>
       </Container>
     </ThemeProvider>
   );
