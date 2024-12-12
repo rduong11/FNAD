@@ -2,7 +2,6 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import MuiApp from './MuiApp.jsx'
 import { ThemeProvider } from '@emotion/react'
 
 // const theme = createTheme({
@@ -32,6 +31,6 @@ import { ThemeProvider } from '@emotion/react'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-      <MuiApp />
+      <App />
   </StrictMode>,
 )
