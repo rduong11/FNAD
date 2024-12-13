@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import './index.css';
 import { Container, createTheme, Typography, Button, Box, ThemeProvider, Dialog, DialogActions, DialogContent, DialogTitle, Card, CardContent} from "@mui/material";
-import { red } from '@mui/material/colors';
-import { shadows } from '@mui/system';
 
 function App()
 {
